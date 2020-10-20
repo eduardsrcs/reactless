@@ -1,0 +1,22 @@
+.pausedlist{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.pausedlist>ul{
+  list-style-type: none;
+  padding-left: 4px;
+  border-left: 2px solid #07f;
+}
+.pausedlist>ul>li:not(:last-child){
+  margin-bottom: 1rem;
+}
+.pausedlist>ul>li>div>span.green{
+  color: green;
+}
+.pausedlist>ul>li>div>a{
+  color: blue;
+  text-decoration: none;
+}
+
+span.grey{
+  color: grey;
+}

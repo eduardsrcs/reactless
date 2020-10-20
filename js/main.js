@@ -1,10 +1,6 @@
-const user = {
-  firstName: 'Varius',
-  lastName: 'Perez',
-  fullName(){
-    return `${this.firstName} ${this.lastName}`
-  }
-};
+const listItems = paused.map((el, index)=>(
+  <li key={index}><Paused item={el}/></li>
+))
 
 class Welcome extends React.Component {
   render() {
@@ -13,34 +9,21 @@ class Welcome extends React.Component {
   }
 }
 
-class Time extends React.Component{
-  
-  render() {
-    return(
-    <div>
-      It is {new Date().toLocaleString()}.
-    </div>
-    )
-  }
-}
 
 function Paused (props){
+  console.log(props)
   return(
-    <span>
-      <a href={props.art} target="_blank">{props.name}</a>.
-    </span>
+    <div>
+      <a href={props.item.art} target="_blank">{props.item.name}</a>. {props.item.desc}<br /><span className="green">{props.item.tm}</span>
+    </div>
   )
 }
 
 function PausedList (){
   return(
-    <div>
+    <div className="pausedlist">
       <h3>Links from docs</h3>
-      <ul>
-        <li>
-          <Paused art="https://reactjs.org/docs/components-and-props.html" name="Components and Props"/>
-        </li>
-      </ul>
+      <ul>{listItems}</ul>
     </div>
   )
 }
@@ -52,11 +35,41 @@ function tickk(el){
   );
 }
 
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      <p>It is <span className="grey">{this.state.date.toLocaleTimeString()}</span>.</p>
+    );
+  }
+}
+
 setInterval(() => {
   const element = (
     <div>
       <Welcome name="Varius" />
-      <Time />
+      <Clock />
       <PausedList />
     </div>
   );
