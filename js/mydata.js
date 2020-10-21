@@ -30,6 +30,24 @@ const paused = [
     name: "Handling Events",
     desc: "Handling events with React elements is very similar to handling events on DOM elements.",
     tm: "2020.10.21 18:00"
-  }
+  },
+  {
+    art: "https://reactjs.org/docs/conditional-rendering.html",
+    name: "Conditional Rendering",
+    desc: "In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.",
+    tm: "2020.10.21 18:30"
+  },
+  {
+    art: "https://reactjs.org/docs/forms.html",
+    name: "Forms",
+    desc: "HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state.",
+    tm: "2020.10.21 19:00"
+  },
+  {
+    art: "https://reactjs.org/docs/lifting-state-up.html",
+    name: "Lifting State Up",
+    desc: "Often, several components need to reflect the same changing data. We recommend lifting the shared state up to their closest common ancestor. Let’s see how this works in action.",
+    tm: "2020.10.21 19:30"
+  },
 
 ]
