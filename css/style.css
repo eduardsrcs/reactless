@@ -1,3 +1,16 @@
+body{
+  background-color: #124;
+  color: #ffc;
+}
+
+a{
+  color: #ccc;
+}
+
+a:hover{
+  color: #bbc;
+}
+
 .pausedlist{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -12,9 +25,14 @@
 .pausedlist>ul>li>div>span.green{
   color: green;
 }
-.pausedlist>ul>li>div>a{
-  color: blue;
+.pausedlist>ul>li>div a{
+  color: #aaf;
   text-decoration: none;
+  transition: .3s;
+}
+
+.pausedlist>ul>li>div a:hover{
+color: #88d;
 }
 
 span.grey{

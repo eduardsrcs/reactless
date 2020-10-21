@@ -24,6 +24,12 @@ const paused = [
     name: "State and Lifecycle",
     desc: "This page introduces the concept of state and lifecycle in a React component. You can find a detailed component API reference here.",
     tm: "2020.10.20 21:50"
+  },
+  {
+    art: "https://reactjs.org/docs/handling-events.html",
+    name: "Handling Events",
+    desc: "Handling events with React elements is very similar to handling events on DOM elements.",
+    tm: "2020.10.21 18:00"
   }
 
 ]

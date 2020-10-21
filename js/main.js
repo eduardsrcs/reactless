@@ -1,6 +1,44 @@
+setTimeout(() => {
+  const element = (
+    <div>
+      <Welcome name="Varius" />
+      <Clock />
+      <PausedList />
+      <ActionLink />
+      <br />
+      <Toggle />
+    </div>
+  );
+  tickk(element)
+}, 0);
+
 const listItems = paused.map((el, index)=>(
   <li key={index}><Paused item={el}/></li>
 ))
+
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
 
 class Welcome extends React.Component {
   render() {
@@ -11,10 +49,9 @@ class Welcome extends React.Component {
 
 
 function Paused (props){
-  console.log(props)
   return(
     <div>
-      <a href={props.item.art} target="_blank">{props.item.name}</a>. {props.item.desc}<br /><span className="green">{props.item.tm}</span>
+      <strong><a href={props.item.art} target="_blank">{props.item.name}</a>.</strong> {props.item.desc}<br /><span className="green">{props.item.tm}</span>
     </div>
   )
 }
@@ -65,13 +102,15 @@ class Clock extends React.Component {
   }
 }
 
-setInterval(() => {
-  const element = (
-    <div>
-      <Welcome name="Varius" />
-      <Clock />
-      <PausedList />
-    </div>
+function ActionLink() {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+  }
+
+  return (
+    <a href="#" onClick={handleClick}>
+      Click me
+    </a>
   );
-  tickk(element)
-}, 1000);
+}
